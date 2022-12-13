@@ -29,10 +29,9 @@ To install packages from OpenUPM, you can either use [openupm-cli](https://openu
 4. Type `https://github.com/ArtyIF/TMAG.git` and click the "Add" button
 
 ## Features and Roadmap
-- [x] Simple noise generation
-- [ ] Other noises generation
-- [ ] Other generators
+- [x] Value, Perlin and Simplex noise generation
 - [x] Texture import
+- [ ] Other generators
 - [x] Tool to convert RAW heightmap exports to regular Textures
 - [x] Basic math operators (Add, Subtract, Multiply, Divide)
 - [ ] More math operators
@@ -40,11 +39,12 @@ To install packages from OpenUPM, you can either use [openupm-cli](https://openu
 - [x] Heightmap output
 - [ ] Splatmap output
 - [ ] Detail output
-- [ ] Come up with more features
 - [ ] Terrain grid
 - [ ] Infinite terrain?
-- [ ] Phase out Tri Inspector and xNode?
+- [ ] Phase out Tri Inspector?
 - [ ] Move to Compute Shaders? Render Textures have a lot of issues with them
+- [ ] Or maybe move to shader generation? Should solve potential OoB issues
+- [ ] Come up with more features
 
 ## Known Bugs (move to issues)
 - Because of how render textures work, sometimes you need to click the Generate button twice
