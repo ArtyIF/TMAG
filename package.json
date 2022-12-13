@@ -1,6 +1,6 @@
 {
     "name": "com.github.artyif.tmag",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "displayName": "TMAG",
     "description": "A node-based Terrain Modifier And Generator (hence the name)",
     "unity": "2020.3",
@@ -9,7 +9,8 @@
     "dependencies": {
         "com.codewriter.triinspector": "1.9.5",
         "com.github.siccity.xnode": "1.8.5",
-        "com.unity.shadergraph": "12.1.8"
+        "com.unity.shadergraph": "12.1.8",
+        "jp.keijiro.noiseshader": "2.0.0"
     },
     "keywords": [
         "3d",

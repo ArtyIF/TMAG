@@ -4,7 +4,7 @@ using UnityEditor;
 using UnityEngine;
 using XNode;
 
-[CreateNodeMenu("TMAG/Generator/Import/Texture")]
+[CreateNodeMenu("TMAG/Generators/Import/Texture")]
 public class TextureNode : TMAGShaderNodeBase
 {
     public Texture2D value;

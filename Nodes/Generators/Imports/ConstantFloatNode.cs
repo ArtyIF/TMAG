@@ -4,7 +4,7 @@ using UnityEditor;
 using UnityEngine;
 using XNode;
 
-[CreateNodeMenu("TMAG/Generator/Import/Constant")]
+[CreateNodeMenu("TMAG/Generators/Import/Constant")]
 public class ConstantNode : TMAGShaderNodeBase
 {
     public float value;
