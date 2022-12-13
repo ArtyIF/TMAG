@@ -1,0 +1,25 @@
+{
+    "name": "com.github.artyif.tmag",
+    "version": "0.1.0",
+    "displayName": "TMAG",
+    "description": "A node-based Terrain Modifier And Generator (hence the name)",
+    "unity": "2020.3",
+    "documentationUrl": "https://github.com/ArtyIF/TMAG",
+    "licensesUrl": "https://github.com/ArtyIF/TMAG/blob/main/LICENSE.md",
+    "dependencies": {
+        "com.codewriter.triinspector": "1.9.5",
+        "com.github.siccity.xnode": "1.8.5",
+        "com.unity.shadergraph": "12.1.8"
+    },
+    "keywords": [
+        "3d",
+        "node-editor",
+        "procedural-generation",
+        "terrain-generation"
+    ],
+    "author": {
+        "name": "ArtyIF",
+        "email": "artyomisflash@mail.ru",
+        "url": "https://github.com/ArtyIF"
+    }
+}
