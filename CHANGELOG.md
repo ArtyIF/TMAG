@@ -5,7 +5,10 @@
 - If you made multiple changes a commit, break it into multiple bullet points.
 - Each breaking change should be preceded with `**BREAKING CHANGE**:` in the changelog entry. The minor version (major when we hit v1.0.0) should also increase accordingly.
 - End each point with your GitHub username with the @ symbol in brackets, e.g.: `Made changes (@ArtyIF)`.
-- When the new version is ready, the commit hash should be added to each point, e.g.: `Made changes (@ArtyIF, 2ef7bde608ce5404e97d5f042f95f89f1c23287)`. The hash will be converted into a link by GitHub automatically. The header should also be renamed to the version number before creating the tag. Also make sure to change the package.json version as well.
+- When the new version is ready, the commit hash should be added to each point, e.g.: `Made changes (@ArtyIF, 2ef7bde608ce5404e97d5f042f95f89f1c23287)`. The hash will be converted into a link by GitHub automatically. The header should also be renamed to the version number. After that, create the according tag. Also make sure to change the package.json version as well.
+
+## Next Version
+- Made some clarifications in the changelog (@ArtyIF)
 
 ## v0.2.1
 - Fixed backing value for node inputs (i.e. the Custom Render Texture selection) being shown (@ArtyIF, 1037a78c0831ee753fbb3d04c4e15533160e402c)
