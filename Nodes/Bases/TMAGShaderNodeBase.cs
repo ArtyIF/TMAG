@@ -5,13 +5,12 @@ using UnityEditor;
 using UnityEngine;
 using XNode;
 
-public class TMAGShaderNodeBase : Node
+public class TMAGShaderNodeBase : TMAGNodeBase
 {
     [Output(typeConstraint = TypeConstraint.Strict)] public CustomRenderTexture output;
 
     protected Material ShaderMaterial { get; private set; }
     protected virtual string ShaderPath { get; }
-    protected virtual string NodeName { get; }
 
     protected override void Init()
     {
@@ -55,10 +54,5 @@ public class TMAGShaderNodeBase : Node
             return output;
         }
         return null;
-    }
-
-    protected void Reset()
-    {
-        name = NodeName;
     }
 }

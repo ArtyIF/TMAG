@@ -5,8 +5,17 @@ using UnityEngine;
 using XNode;
 
 [CreateNodeMenu("TMAG/Outputs/Heightmap")]
-public class HeightmapNode : TMAGOneInputShaderNodeBase
+public class HeightmapNode : TMAGNodeBase
 {
-    protected override string ShaderPath { get; } = "Hidden/TMAG/Blit";
-    protected override string NodeName { get; } = "Heightmap";
+    [Input(
+        connectionType = ConnectionType.Override,
+        typeConstraint = TypeConstraint.Strict,
+        backingValue = ShowBackingValue.Never
+    )]
+    public CustomRenderTexture input;
+    
+    public override object GetValue(NodePort port)
+    {
+        return GetInputValue<CustomRenderTexture>("input");
+    }
 }
