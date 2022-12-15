@@ -7,6 +7,7 @@
 
 ## Next Version
 - Made some clarifications in the changelog
+- Fixed terrain not getting updated probably when first clicking the button
 
 ## v0.2.1
 - Fixed backing value for node inputs (i.e. the Custom Render Texture selection) being shown

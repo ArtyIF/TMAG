@@ -46,9 +46,6 @@ To install packages from OpenUPM, you can either use [openupm-cli](https://openu
 - [ ] Or maybe move to shader generation? Should solve potential OoB issues
 - [ ] Come up with more features
 
-## Known Bugs (move to issues)
-- Because of how render textures work, sometimes you need to click the Generate button twice
-
 ## Thanks
 - Denis Pahunov for creating [MapMagic 2](https://assetstore.unity.com/packages/tools/terrain/mapmagic-2-165180), which is an incredibly powerful (although slow on Linux Editor) free tool (with extra paid extensions) for terrain generation
 - Any contributors. If you aren't one, don't be afraid!
