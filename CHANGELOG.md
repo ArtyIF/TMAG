@@ -1,13 +1,14 @@
 # Changelog
 
 ## Notes
-- Whenever you make changes to the project's code, put a mildly-detailed description of changes you made in this file under the Next Version header. Use one bullet point per change.
+- Whenever you make changes to the project's code, put a mildly-detailed description of changes you made in this file under the Upcoming Version header. Use one bullet point per change.
 - Each breaking change should be preceded with `**BREAKING CHANGE**:` in the changelog entry. The minor version (major when we hit v1.0.0) should also increase accordingly.
 - When the new version is ready, rename the header to the version number. After that, create the according tag. Also make sure to change the package.json version as well.
 
-## Next Version
+## Upcoming Version
 - Moved properties on written shaders to a cbuffer. I don't think it does much, but it does make Unity complain less about SRP support
 - Added extra delay before updating the terrain maps because I just had the bug happen on me again for some reason
+- Some README and changelog notes updates
 
 ## v0.2.2
 - Made some clarifications in the changelog
