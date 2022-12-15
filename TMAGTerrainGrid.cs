@@ -43,6 +43,7 @@ public class TMAGTerrainGrid : MonoBehaviour
     #endregion
 
     private CustomRenderTexture heightmapRTToApply = null;
+    private int framesToUpdatingMaps = 0;
 
     #region Buttons
     [Button]
@@ -51,11 +52,12 @@ public class TMAGTerrainGrid : MonoBehaviour
     {
         graph.terrainResolution = terrainResolution;
         heightmapRTToApply = (CustomRenderTexture)graph.GetHeightmapNode().GetValue(graph.GetHeightmapNode().GetOutputPort("output"));
+        framesToUpdatingMaps = 2;
     }
     #endregion
 
     protected void Update() {
-        if (heightmapRTToApply) {
+        if (framesToUpdatingMaps > 0) {
             TerrainData terrainData = new()
             {
                 heightmapResolution = terrainResolution,
@@ -97,6 +99,8 @@ public class TMAGTerrainGrid : MonoBehaviour
             terrainGO.name = "Generated Terrain Object";
             terrainGO.transform.parent = transform;
 
+            framesToUpdatingMaps--;
+        } else {
             heightmapRTToApply = null;
         }
     }

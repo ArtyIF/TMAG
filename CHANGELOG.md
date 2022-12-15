@@ -7,6 +7,7 @@
 
 ## Next Version
 - Moved properties on written shaders to a cbuffer. I don't think it does much, but it does make Unity complain less about SRP support
+- Added extra delay before updating the terrain maps because I just had the bug happen on me again for some reason
 
 ## v0.2.2
 - Made some clarifications in the changelog
