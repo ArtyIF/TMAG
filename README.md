@@ -28,18 +28,20 @@ To install packages from OpenUPM, you can either use [openupm-cli](https://openu
 3. Click the plus button and select "Add package from git URL..."
 4. Type `https://github.com/ArtyIF/TMAG.git` and click the "Add" button
 
-## Features and Roadmap
+## Features and Roadmap (no particular order)
 - [x] Value, Perlin and Simplex noise generation
 - [x] Texture import
 - [ ] Other generators
 - [x] Tool to convert RAW heightmap exports to regular Textures
 - [x] Basic math operators (Add, Subtract, Multiply, Divide)
 - [ ] More math operators
-- [ ] More terrain-specific operators, like Slope and Erosion
+- [ ] Slope and Steepness operators
+- [ ] More terrain-specific operators
 - [x] Heightmap output
 - [ ] Splatmap output
 - [ ] Detail output
 - [ ] Terrain grid
+- [ ] Export terrains to asset
 - [ ] Infinite terrain?
 - [ ] Phase out Tri Inspector?
 - [ ] Move to Compute Shaders? Render Textures have a lot of issues with them

@@ -7,7 +7,7 @@ using XNode;
 [CreateNodeMenu("TMAG/Generators/Noise/Perlin")]
 public class PerlinNoiseNode : TMAGShaderNodeBase
 {
-    public float scale;
+    public float scale = 10.0f;
     protected override string ShaderPath { get; } = "Hidden/TMAG/PerlinNoiseNode";
     protected override string NodeName { get; } = "Perlin Noise";
 

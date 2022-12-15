@@ -7,7 +7,7 @@ using XNode;
 [CreateNodeMenu("TMAG/Generators/Noise/Simplex")]
 public class SimplexNoiseNode : TMAGShaderNodeBase
 {
-    public float scale;
+    public float scale = 10.0f;
     protected override string ShaderPath { get; } = "Hidden/TMAG/SimplexNoiseNode";
     protected override string NodeName { get; } = "Simplex Noise";
 

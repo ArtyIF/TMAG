@@ -7,7 +7,7 @@ using XNode;
 [CreateNodeMenu("TMAG/Generators/Noise/Value")]
 public class ValueNoiseNode : TMAGShaderNodeBase
 {
-    public float scale;
+    public float scale = 10.0f;
     protected override string ShaderPath { get; } = "Hidden/TMAG/ValueNoiseNode";
     protected override string NodeName { get; } = "Value Noise";
 

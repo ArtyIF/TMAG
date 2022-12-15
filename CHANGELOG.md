@@ -5,9 +5,11 @@
 - Each breaking change should be preceded with `**BREAKING CHANGE**:` in the changelog entry. The minor version (major when we hit v1.0.0) should also increase accordingly.
 - When the new version is ready, rename the header to the version number. After that, create the according tag. Also make sure to change the package.json version as well.
 
-## Next Version
+## v0.2.2
 - Made some clarifications in the changelog
 - Fixed terrain not getting updated probably when first clicking the button
+- Added Slope node, which is similar to Steepness but it adds parameters to specify the range of the gradient outputted. It will be useful for texturing cliffs when that gets added later
+- Assigned default values to noise nodes
 
 ## v0.2.1
 - Fixed backing value for node inputs (i.e. the Custom Render Texture selection) being shown

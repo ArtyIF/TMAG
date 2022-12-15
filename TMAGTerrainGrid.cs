@@ -66,11 +66,11 @@ public class TMAGTerrainGrid : MonoBehaviour
             RenderTexture.active = heightmapRTToApply;
 
             // The commented-out way is faster, but it treats the texture as a signed one, so any heights above a certain point turn into very deep holes
-            /* terrainData.CopyActiveRenderTextureToHeightmap(new(0, 0, terrainResolution, terrainResolution), new(), TerrainHeightmapSyncControl.HeightAndLod);
-            terrainData.DirtyHeightmapRegion(new(0, 0, terrainResolution, terrainResolution), TerrainHeightmapSyncControl.HeightAndLod);
-            terrainData.SyncHeightmap(); */
+            // terrainData.CopyActiveRenderTextureToHeightmap(new(0, 0, terrainResolution, terrainResolution), new(), TerrainHeightmapSyncControl.HeightAndLod);
+            // terrainData.DirtyHeightmapRegion(new(0, 0, terrainResolution, terrainResolution), TerrainHeightmapSyncControl.HeightAndLod);
+            // terrainData.SyncHeightmap();
 
-            // This way is more classic and brute-force-y, but it actually works
+            // The way below is more classic and brute-force-y, but it actually works
             Texture2D heightmapTex = new(terrainResolution, terrainResolution, UnityEngine.Experimental.Rendering.GraphicsFormat.R16_UNorm, UnityEngine.Experimental.Rendering.TextureCreationFlags.DontUploadUponCreate);
             heightmapTex.ReadPixels(new(0, 0, terrainResolution, terrainResolution), 0, 0, false);
             heightmapTex.Apply(false, false);
