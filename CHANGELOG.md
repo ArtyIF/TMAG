@@ -5,6 +5,9 @@
 - Each breaking change should be preceded with `**BREAKING CHANGE**:` in the changelog entry. The minor version (major when we hit v1.0.0) should also increase accordingly.
 - When the new version is ready, rename the header to the version number. After that, create the according tag. Also make sure to change the package.json version as well.
 
+## Next Version
+- Moved properties on written shaders to a cbuffer. I don't think it does much, but it does make Unity complain less about SRP support
+
 ## v0.2.2
 - Made some clarifications in the changelog
 - Fixed terrain not getting updated probably when first clicking the button

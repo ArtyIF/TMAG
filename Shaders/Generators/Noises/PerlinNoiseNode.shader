@@ -19,7 +19,9 @@ Shader "Hidden/TMAG/PerlinNoiseNode"
             #pragma fragment frag
             #pragma target 3.0
 
-            float _Scale;
+            cbuffer UnityPerMaterial {
+                float _Scale;
+            };
 
             float4 frag(v2f_customrendertexture IN) : SV_Target
             {
