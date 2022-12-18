@@ -5,6 +5,7 @@ using XNode;
 public class TMAGShaderNodeBase : TMAGNodeBase
 {
     [Output(typeConstraint = TypeConstraint.Strict)] public CustomRenderTexture output;
+    [HideInInspector] public bool hidePreview;
 
     protected Material ShaderMaterial { get; private set; }
     protected virtual string ShaderPath { get; }

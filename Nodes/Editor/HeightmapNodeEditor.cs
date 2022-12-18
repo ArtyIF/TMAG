@@ -10,7 +10,16 @@ public class HeightmapNodeEditor : NodeEditor
         HeightmapNode node = target as HeightmapNode;
         
         GUILayout.Space(NodeEditorResources.styles.nodeBody.padding.bottom);
-        Rect rect = GUILayoutUtility.GetAspectRect(1, GUILayout.ExpandWidth(true));
-        GUI.DrawTexture(rect, node.GetValue(null) as CustomRenderTexture, ScaleMode.ScaleToFit);
+        if (!node.hidePreview) {
+            Rect rect = GUILayoutUtility.GetAspectRect(1, GUILayout.ExpandWidth(true));
+            GUI.DrawTexture(rect, node.GetValue(node.GetOutputPort("output")) as CustomRenderTexture, ScaleMode.ScaleToFit);
+            if (GUILayout.Button("Hide Preview", GUILayout.ExpandWidth(true))) {
+                node.hidePreview = true;
+            }
+        } else {
+            if (GUILayout.Button("Show Preview", GUILayout.ExpandWidth(true))) {
+                node.hidePreview = false;
+            }
+        }
     }
 }

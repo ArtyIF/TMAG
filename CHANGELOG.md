@@ -12,6 +12,7 @@
 - Tile size is now a Vector3 instead of a float
 - Fixed the deferred terrain update mechanism
 - Removed unused using statements
+- Added Toggle Preview button to nodes
 
 ## v0.2.2
 - Made some clarifications in the changelog
