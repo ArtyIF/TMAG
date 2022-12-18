@@ -13,6 +13,7 @@
 - Fixed the deferred terrain update mechanism
 - Removed unused using statements
 - Added Toggle Preview button to nodes
+- Removed spacing between parameters and previews in nodes
 
 ## v0.2.2
 - Made some clarifications in the changelog
