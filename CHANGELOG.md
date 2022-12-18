@@ -5,7 +5,7 @@
 - Each breaking change should be preceded with `**BREAKING CHANGE**:` in the changelog entry. The minor version (major when we hit v1.0.0) should also increase accordingly.
 - When the new version is ready, rename the header to the version number. After that, create the according tag. Also make sure to change the package.json version as well.
 
-## Upcoming Version
+## v0.2.3
 - Moved properties on written shaders to a cbuffer. I don't think it does much, but it does make Unity complain less about SRP support
 - Added extra delay before updating the terrain maps because I just had the bug happen on me again for some reason
 - Some README and changelog notes updates
@@ -15,6 +15,7 @@
 - Added Toggle Preview button to nodes
 - Removed spacing between parameters and previews in nodes
 - Bumped minimum Unity version to better reflect dependencies' minimum versions
+- Hid automatically-set settings on graph object in inspector to avoid confusion
 
 ## v0.2.2
 - Made some clarifications in the changelog
