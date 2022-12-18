@@ -1,9 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
-using UnityEngine;
-using XNode;
-
 [CreateNodeMenu("TMAG/Generators/Noise/Simplex")]
 public class SimplexNoiseNode : TMAGShaderNodeBase
 {

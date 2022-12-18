@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+#if UNITY_EDITOR
 using System.IO;
 using UnityEditor;
 using UnityEngine;
@@ -12,12 +11,11 @@ public class ConvertRAWToTextureWindow : EditorWindow
     public string savePath = "Assets/TerrainTexture.asset";
 
     [MenuItem("Tools/TMAG/Convert RAW To Texture")]
-    static void Init()
+    protected static void Init()
     {
         ConvertRAWToTextureWindow window = GetWindow(typeof(ConvertRAWToTextureWindow)) as ConvertRAWToTextureWindow;
         window.Show();
     }
-
 
     void Convert()
     {
@@ -31,14 +29,16 @@ public class ConvertRAWToTextureWindow : EditorWindow
         }
     }
 
-    void OnGUI()
+    protected void OnGUI()
     {
         EditorGUILayout.IntField("Resolution", resolution);
         EditorGUILayout.Toggle("Data is 8-bit", eightBit);
         EditorGUILayout.TextField("Save Path", savePath);
         GUILayout.Label("For now, only Windows format is supported");
-        if (GUILayout.Button("Select RAW file")) {
+        if (GUILayout.Button("Select RAW file"))
+        {
             Convert();
         }
     }
 }
+#endif

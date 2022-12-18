@@ -1,9 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
-using UnityEngine;
-using XNode;
-
 [CreateNodeMenu("TMAG/Generators/Import/Constant")]
 public class ConstantNode : TMAGShaderNodeBase
 {

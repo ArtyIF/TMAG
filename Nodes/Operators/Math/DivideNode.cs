@@ -1,9 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
-using UnityEngine;
-using XNode;
-
 [CreateNodeMenu("TMAG/Operators/Math/Divide")]
 public class DivideNode : TMAGTwoInputShaderNodeBase
 {

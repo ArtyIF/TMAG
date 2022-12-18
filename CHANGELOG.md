@@ -11,6 +11,7 @@
 - Some README and changelog notes updates
 - Tile size is now a Vector3 instead of a float
 - Fixed the deferred terrain update mechanism
+- Removed unused using statements
 
 ## v0.2.2
 - Made some clarifications in the changelog
