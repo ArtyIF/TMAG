@@ -10,6 +10,7 @@
 - Added extra delay before updating the terrain maps because I just had the bug happen on me again for some reason
 - Some README and changelog notes updates
 - Tile size is now a Vector3 instead of a float
+- Fixed the deferred terrain update mechanism
 
 ## v0.2.2
 - Made some clarifications in the changelog

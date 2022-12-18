@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using TriInspector;
 using XNode;
 
@@ -43,7 +45,6 @@ public class TMAGTerrainGrid : MonoBehaviour
     #endregion
 
     private CustomRenderTexture heightmapRTToApply = null;
-    private int framesToUpdatingMaps = 0;
 
     #region Buttons
     [Button]
@@ -53,12 +54,20 @@ public class TMAGTerrainGrid : MonoBehaviour
         graph.terrainResolution = terrainResolution;
         graph.tileSize = tileSize;
         heightmapRTToApply = (CustomRenderTexture)graph.GetHeightmapNode().GetValue(null);
-        framesToUpdatingMaps = 2;
+#if UNITY_EDITOR
+        if (!Application.isPlaying)
+        {
+            EditorApplication.QueuePlayerLoopUpdate();
+            SceneView.RepaintAll();
+        }
+#endif
     }
     #endregion
 
-    protected void Update() {
-        if (framesToUpdatingMaps > 0) {
+    protected void Update()
+    {
+        if (heightmapRTToApply)
+        {
             TerrainData terrainData = new()
             {
                 heightmapResolution = terrainResolution,
@@ -100,8 +109,6 @@ public class TMAGTerrainGrid : MonoBehaviour
             terrainGO.name = "Generated Terrain Object";
             terrainGO.transform.parent = transform;
 
-            framesToUpdatingMaps--;
-        } else {
             heightmapRTToApply = null;
         }
     }
