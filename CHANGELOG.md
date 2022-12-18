@@ -14,6 +14,7 @@
 - Removed unused using statements
 - Added Toggle Preview button to nodes
 - Removed spacing between parameters and previews in nodes
+- Bumped minimum Unity version to better reflect dependencies' minimum versions
 
 ## v0.2.2
 - Made some clarifications in the changelog

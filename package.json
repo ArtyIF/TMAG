@@ -3,7 +3,7 @@
     "version": "0.2.2",
     "displayName": "TMAG",
     "description": "A node-based Terrain Modifier And Generator. TMAG, if you will.",
-    "unity": "2020.3",
+    "unity": "2021.2",
     "documentationUrl": "https://github.com/ArtyIF/TMAG",
     "licensesUrl": "https://github.com/ArtyIF/TMAG/blob/main/LICENSE.md",
     "changelogUrl": "https://github.com/ArtyIF/TMAG/blob/main/CHANGELOG.md",
