@@ -7,6 +7,7 @@
 
 ## Upcoming Release
 - Some updates to README and changelog
+- Fixed RAW to texture tool's settings not working
 
 ## v0.2.3
 - Moved properties on written shaders to a cbuffer. I don't think it does much, but it does make Unity complain less about SRP support

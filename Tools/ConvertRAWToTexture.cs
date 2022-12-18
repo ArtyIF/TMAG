@@ -31,9 +31,9 @@ public class ConvertRAWToTextureWindow : EditorWindow
 
     protected void OnGUI()
     {
-        EditorGUILayout.IntField("Resolution", resolution);
-        EditorGUILayout.Toggle("Data is 8-bit", eightBit);
-        EditorGUILayout.TextField("Save Path", savePath);
+        resolution = EditorGUILayout.IntField("Resolution", resolution);
+        eightBit = EditorGUILayout.Toggle("Data is 8-bit", eightBit);
+        savePath = EditorGUILayout.TextField("Save Path", savePath);
         GUILayout.Label("For now, only Windows format is supported");
         if (GUILayout.Button("Select RAW file"))
         {
