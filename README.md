@@ -44,6 +44,7 @@ To install packages from OpenUPM, you can either use [openupm-cli](https://openu
 - [ ] Export terrains to asset
 - [ ] Infinite terrain?
 - [ ] Phase out Tri Inspector? Having to install the Installer as well is cumbersome, and I don't see any benefit with this
+- [ ] Move to compute shaders? Should solve some issues with Render Textures
 - [ ] Move to shader generation? Should solve potential OoB issues
 - [ ] Come up with more features
 
