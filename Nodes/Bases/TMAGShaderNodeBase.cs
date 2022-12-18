@@ -6,7 +6,7 @@ public class TMAGShaderNodeBase : TMAGNodeBase
 {
     [Output(typeConstraint = TypeConstraint.Strict)] public CustomRenderTexture output;
 
-    public bool HidePreview { get; set; } = false;
+    public virtual bool HidePreview { get; set; } = false;
     protected Material ShaderMaterial { get; private set; }
     protected virtual string ShaderPath { get; }
 

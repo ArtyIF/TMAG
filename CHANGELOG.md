@@ -10,6 +10,7 @@
 - Fixed RAW to texture tool's settings not working
 - Removed grid size parameter for now
 - **BREAKING CHANGE**: hidePreview is now a parameter to allow overriding the default value
+- Constant node now hides preview by default
 
 ## v0.2.3
 - Moved properties on written shaders to a cbuffer. I don't think it does much, but it does make Unity complain less about SRP support
