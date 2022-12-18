@@ -6,7 +6,7 @@ using TriInspector;
 
 [ExecuteAlways]
 [DeclareFoldoutGroup("generator", Title = "Generator", Expanded = true)]
-[DeclareFoldoutGroup("grid", Title = "Grid (not supported yet)")]
+[DeclareFoldoutGroup("grid", Title = "Grid")]
 [DeclareFoldoutGroup("terrain", Title = "Terrain")]
 public class TMAGTerrainGrid : MonoBehaviour
 {
@@ -24,9 +24,9 @@ public class TMAGTerrainGrid : MonoBehaviour
     #region Grid Settings
     [GroupNext("grid")]
 
-    [ValidateInput(nameof(CheckGridSizePositivity))]
-    [LabelText("Grid Size")]
-    public Vector2Int gridSize = new(1, 1);
+    //[ValidateInput(nameof(CheckGridSizePositivity))]
+    //[LabelText("Grid Size")]
+    //public Vector2Int gridSize = new(1, 1);
 
     [ValidateInput(nameof(CheckTileSizePositivity))]
     [LabelText("Tile Size")]
@@ -111,11 +111,11 @@ public class TMAGTerrainGrid : MonoBehaviour
     }
 
     #region Validators
-    private TriValidationResult CheckGridSizePositivity()
+    /* private TriValidationResult CheckGridSizePositivity()
     {
         if (gridSize.x < 1 || gridSize.y < 1) return TriValidationResult.Error("Grid size cannot be negative or zero");
         return TriValidationResult.Valid;
-    }
+    } */
 
     private TriValidationResult CheckTileSizePositivity()
     {
