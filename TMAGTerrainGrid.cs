@@ -31,7 +31,7 @@ public class TMAGTerrainGrid : MonoBehaviour
 
     [ValidateInput(nameof(CheckTileSizePositivity))]
     [LabelText("Tile Size")]
-    public float tileSize = 100.0f;
+    public Vector3 tileSize = new(1000.0f, 600.0f, 1000.0f);
     #endregion
 
     #region Terrain Settings
@@ -51,7 +51,8 @@ public class TMAGTerrainGrid : MonoBehaviour
     private void GenerateTerrainGrid()
     {
         graph.terrainResolution = terrainResolution;
-        heightmapRTToApply = (CustomRenderTexture)graph.GetHeightmapNode().GetValue(graph.GetHeightmapNode().GetOutputPort("output"));
+        graph.tileSize = tileSize;
+        heightmapRTToApply = (CustomRenderTexture)graph.GetHeightmapNode().GetValue(null);
         framesToUpdatingMaps = 2;
     }
     #endregion
@@ -61,7 +62,7 @@ public class TMAGTerrainGrid : MonoBehaviour
             TerrainData terrainData = new()
             {
                 heightmapResolution = terrainResolution,
-                size = new(1000, 600, 1000)
+                size = tileSize
             };
 
             RenderTexture previousRT = RenderTexture.active;
@@ -114,7 +115,7 @@ public class TMAGTerrainGrid : MonoBehaviour
 
     private TriValidationResult CheckTileSizePositivity()
     {
-        if (tileSize <= 0) return TriValidationResult.Error("Tile size cannot be negative or zero");
+        if (tileSize.x <= 0 || tileSize.y <= 0 || tileSize.z <= 0) return TriValidationResult.Error("Tile size cannot be negative or zero");
         return TriValidationResult.Valid;
     }
     #endregion

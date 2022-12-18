@@ -14,7 +14,7 @@ public class TMAGGraph : NodeGraph
     // TODO: move into a separate struct, as well as TMAGTerrainGrid's settings maybe
     #region Grid Settings
     public Vector2Int gridSize;
-    public float tileSize;
+    public Vector3 tileSize;
     #endregion
 
     #region Terrain Settings
