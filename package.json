@@ -1,6 +1,6 @@
 {
     "name": "com.github.artyif.tmag",
-    "version": "0.2.3",
+    "version": "0.3.0",
     "displayName": "TMAG",
     "description": "A node-based Terrain Modifier And Generator. TMAG, if you will.",
     "unity": "2021.2",

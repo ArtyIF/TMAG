@@ -9,20 +9,20 @@ public class TMAGShaderNodeBaseEditor : NodeEditor
         base.OnBodyGUI();
         TMAGShaderNodeBase node = target as TMAGShaderNodeBase;
 
-        if (!node.hidePreview)
+        if (!node.HidePreview)
         {
             Rect rect = GUILayoutUtility.GetAspectRect(1, GUILayout.ExpandWidth(true));
             GUI.DrawTexture(rect, node.GetValue(node.GetOutputPort("output")) as CustomRenderTexture, ScaleMode.ScaleToFit);
             if (GUILayout.Button("Hide Preview", GUILayout.ExpandWidth(true)))
             {
-                node.hidePreview = true;
+                node.HidePreview = true;
             }
         }
         else
         {
             if (GUILayout.Button("Show Preview", GUILayout.ExpandWidth(true)))
             {
-                node.hidePreview = false;
+                node.HidePreview = false;
             }
         }
     }

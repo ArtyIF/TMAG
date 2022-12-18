@@ -10,7 +10,7 @@ public class HeightmapNode : TMAGNodeBase
         backingValue = ShowBackingValue.Never
     )]
     public CustomRenderTexture input;
-    [HideInInspector] public bool hidePreview;
+    public bool HidePreview { get; set; } = false;
     
     public override object GetValue(NodePort port)
     {
