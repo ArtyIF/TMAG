@@ -9,8 +9,11 @@
 - Some updates to README and changelog
 - Fixed RAW to texture tool's settings not working
 - Removed grid size parameter for now
-- **BREAKING CHANGE**: hidePreview is now a parameter to allow overriding the default value
+- **BREAKING CHANGE** (reverted): hidePreview is now a parameter to allow overriding the default value
 - Constant node now hides preview by default
+- ConstantFloatNode.cs moved to ConstantNode.cs. This one is probably not a breaking change since the class name and the .meta file are the same
+- Undone the hidePreview change due to errors it caused (while still keeping the new constant node preview behavior)
+- **BREAKING CHANGE**: Changed the order of assigning heights to be more correct
 
 ## v0.2.3
 - Moved properties on written shaders to a cbuffer. I don't think it does much, but it does make Unity complain less about SRP support

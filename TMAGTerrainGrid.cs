@@ -91,7 +91,7 @@ public class TMAGTerrainGrid : MonoBehaviour
             {
                 for (int x = 0; x < terrainResolution; x++)
                 {
-                    heights[x, y] = heightmapTex.GetPixel(x, y).r;
+                    heights[y, x] = heightmapTex.GetPixel(x, y).r;
                 }
             }
             terrainData.SetHeights(0, 0, heights);
