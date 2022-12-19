@@ -5,7 +5,7 @@
 - Each breaking change should be preceded with `**BREAKING CHANGE**:` in the changelog entry. The minor version (major when we hit v1.0.0) should also increase accordingly. If it's an upcoming release, put the next version in brackets.
 - When the new version is ready, rename the header to the version number. After that, create the according tag. Also make sure to change the package.json version as well.
 
-## Upcoming Release (v0.3.0)
+## v0.3.0
 - Some updates to README and changelog
 - Fixed RAW to texture tool's settings not working
 - Removed grid size parameter for now
