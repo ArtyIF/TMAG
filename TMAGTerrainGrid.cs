@@ -5,7 +5,7 @@ using UnityEditor;
 using TriInspector;
 
 [ExecuteAlways]
-[DeclareFoldoutGroup("generator", Title = "Generator", Expanded = true)]
+[DeclareBoxGroup("graph", Title = "Graph")]
 [DeclareFoldoutGroup("grid", Title = "Grid")]
 [DeclareFoldoutGroup("terrain", Title = "Terrain")]
 public class TMAGTerrainGrid : MonoBehaviour
@@ -13,8 +13,8 @@ public class TMAGTerrainGrid : MonoBehaviour
     // TODO: move to a separate class or struct
     private readonly int[] terrainResolutionValues = { 33, 65, 129, 257, 513, 1025, 2049, 4097 };
 
-    #region Generator Settings
-    [GroupNext("generator")]
+    #region Graph Settings
+    [GroupNext("graph")]
 
     [Required]
     [LabelText("Graph")]
@@ -45,7 +45,7 @@ public class TMAGTerrainGrid : MonoBehaviour
 
     #region Buttons
     [Button]
-    [Group("generator")]
+    [Group("graph")]
     private void GenerateTerrainGrid()
     {
         graph.terrainResolution = terrainResolution;
