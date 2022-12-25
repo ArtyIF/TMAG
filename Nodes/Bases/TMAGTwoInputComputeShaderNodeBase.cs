@@ -15,14 +15,19 @@ public class TMAGTwoInputComputeShaderNodeBase : TMAGComputeShaderNodeBase
     )]
     public RenderTexture b;
 
+    protected override bool AllTexturesAreNotNull()
+    {
+        RenderTexture inputAValue = GetInputValue<RenderTexture>("a");
+        RenderTexture inputBValue = GetInputValue<RenderTexture>("b");
+        return base.AllTexturesAreNotNull() && inputAValue && inputBValue;
+    }
+
     protected override void SetShaderVariables()
     {
         base.SetShaderVariables();
-        RenderTexture inputAValue = GetInputValue<RenderTexture>("a");
-        RenderTexture inputBValue = GetInputValue<RenderTexture>("b");
-        if (inputAValue && inputBValue) {
-            ComputeShader.SetTexture(KernelIndex, "InputA", inputAValue);
-            ComputeShader.SetTexture(KernelIndex, "InputB", inputBValue);
+        if (AllTexturesAreNotNull()) {
+            ComputeShader.SetTexture(KernelIndex, "InputA", GetInputValue<RenderTexture>("a"));
+            ComputeShader.SetTexture(KernelIndex, "InputB", GetInputValue<RenderTexture>("b"));
         }
     }
 }

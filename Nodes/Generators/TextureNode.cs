@@ -7,6 +7,11 @@ public class TextureNode : TMAGComputeShaderNodeBase
     protected override string KernelName { get; } = "TextureNodeMain";
     protected override string NodeName { get; } = "Texture";
 
+    protected override bool AllTexturesAreNotNull()
+    {
+        return base.AllTexturesAreNotNull() && value;
+    }
+
     protected override void SetShaderVariables()
     {
         base.SetShaderVariables();

@@ -44,6 +44,11 @@ public class TMAGComputeShaderNodeBase : TMAGNodeBase
         ComputeShader.SetFloat("TexelSize", 1.0f / (graph as TMAGGraph).terrainResolution);
     }
 
+    protected virtual bool AllTexturesAreNotNull()
+    {
+        return output;
+    }
+
     public override object GetValue(NodePort port)
     {
         if (output == null)
@@ -60,8 +65,11 @@ public class TMAGComputeShaderNodeBase : TMAGNodeBase
         {
             SetShaderVariables();
             int threadGroups = Mathf.CeilToInt((graph as TMAGGraph).terrainResolution / 8.0f);
-            ComputeShader.Dispatch(KernelIndex, threadGroups, threadGroups, 1);
-            return output;
+            if (AllTexturesAreNotNull())
+            {
+                ComputeShader.Dispatch(KernelIndex, threadGroups, threadGroups, 1);
+                return output;
+            }
         }
         return null;
     }

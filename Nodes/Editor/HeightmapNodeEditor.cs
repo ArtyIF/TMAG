@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 using XNodeEditor;
 
@@ -12,7 +13,20 @@ public class HeightmapNodeEditor : NodeEditor
         if (!node.hidePreview)
         {
             Rect rect = GUILayoutUtility.GetAspectRect(1, GUILayout.ExpandWidth(true));
-            GUI.DrawTexture(rect, node.GetValue(node.GetOutputPort("output")) as RenderTexture, ScaleMode.ScaleToFit);
+            RenderTexture nodeValue = node.GetValue(node.GetOutputPort("output")) as RenderTexture;
+            if (nodeValue) {
+                EditorGUI.DrawPreviewTexture(rect, nodeValue);
+            } else {
+                GUIStyle errorStyle = new(EditorStyles.label)
+                {
+                    alignment = TextAnchor.MiddleCenter,
+                    fontStyle = FontStyle.Bold,
+                    fontSize = 18
+                };
+
+                EditorGUI.DrawRect(rect, Color.black);
+                EditorGUI.LabelField(rect, "Missing value!", errorStyle);
+            }
             if (GUILayout.Button("Hide Preview", GUILayout.ExpandWidth(true)))
             {
                 node.hidePreview = true;

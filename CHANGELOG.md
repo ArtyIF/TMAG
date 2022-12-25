@@ -7,8 +7,10 @@
 
 ## Upcoming Release (v0.4.0):
 - Wrote some compute shader replacements for regular shaders
-- **BREAKING CHANGE**: Moved to compute shaders! They work pretty well for the most part. When creating your own, make sure to assign the compute shader in the MonoBehaviour asset inspector window
+- **BREAKING CHANGE**: Moved to compute shaders! They work pretty well for the most part. When creating your own nodes, make sure to assign the compute shader in the MonoBehaviour asset inspector window
 - **BREAKING CHANGE**: The Value Noise and Slope nodes are gone. Value Noise probably forever, Slope only temporarily
+- **BREAKING CHANGE**: Fixed errors when textures are not set. Custom nodes need to override AllTexturesAreNotNull similar to built-in nodes when using own textures
+- When for whatever reason a node outputs null, a warning is now displayed
 
 ## v0.3.0
 - Some updates to README and changelog
