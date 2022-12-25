@@ -11,30 +11,23 @@ RWTexture2D<float> Output;
 [numthreads(8,8,1)]
 void AddNodeMain(uint3 id : SV_DispatchThreadID)
 {
-    Output[id.xy] = saturate(InputA[id.xy] + InputB[id.xy]);
+    Output[id.xy] = max(InputA[id.xy] + InputB[id.xy], 0.0f);
 }
 
 [numthreads(8,8,1)]
 void SubtractNodeMain(uint3 id : SV_DispatchThreadID)
 {
-    Output[id.xy] = saturate(InputA[id.xy] - InputB[id.xy]);
+    Output[id.xy] = max(InputA[id.xy] - InputB[id.xy], 0.0f);
 }
 
 [numthreads(8,8,1)]
 void MultiplyNodeMain(uint3 id : SV_DispatchThreadID)
 {
-    Output[id.xy] = saturate(InputA[id.xy] * InputB[id.xy]);
+    Output[id.xy] = max(InputA[id.xy] * InputB[id.xy], 0.0f);
 }
 
 [numthreads(8,8,1)]
 void DivideNodeMain(uint3 id : SV_DispatchThreadID)
 {
-    if (InputB[id.xy] == 0.0)
-    {
-        Output[id.xy] = 1.0;
-    }
-    else
-    {
-        Output[id.xy] = saturate(InputA[id.xy] / InputB[id.xy]);
-    }
+    Output[id.xy] = max(InputA[id.xy] / InputB[id.xy], 0.0f);
 }

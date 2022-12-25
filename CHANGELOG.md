@@ -9,6 +9,7 @@
 - Texture Node now uses the smallest of dimensions instead of width for calculating input resolution. This isn't considered breaking as this node is meant to be used with heightmaps or splatmaps, i.e. textures that are usually square
 - Added check that compute shaders and random write textures are actually supported
 - Switched to RFloat texture format, which allows Constant Node values to finally be more than 1
+- Math operators now can output values bigger than 1
 
 ## v0.4.0
 - Wrote some compute shader replacements for regular shaders
