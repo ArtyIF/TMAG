@@ -26,17 +26,17 @@ public class TMAGComputeShaderNodeBase : TMAGNodeBase
         if (!SystemInfo.supportsComputeShaders) {
             throw new PlatformNotSupportedException("TMAG requires compute shader support, which this platform doesn't have");
         }
-        if (!SystemInfo.SupportsRandomWriteOnRenderTextureFormat(RenderTextureFormat.R16)) {
-            throw new PlatformNotSupportedException("TMAG requires random write on R16 render texture format support, which this platform doesn't have");
+        if (!SystemInfo.SupportsRandomWriteOnRenderTextureFormat(RenderTextureFormat.RFloat)) {
+            throw new PlatformNotSupportedException("TMAG requires random write on RFloat render texture format support, which this platform doesn't have");
         }
         base.Init();
         if ((graph as TMAGGraph).terrainResolution < 1)
         {
             throw new InvalidOperationException("Terrain resolution is negative or 0!");
         }
-        output = new RenderTexture((graph as TMAGGraph).terrainResolution, (graph as TMAGGraph).terrainResolution, 1, RenderTextureFormat.R16, RenderTextureReadWrite.Linear)
+        output = new RenderTexture((graph as TMAGGraph).terrainResolution, (graph as TMAGGraph).terrainResolution, 1, RenderTextureFormat.RFloat, RenderTextureReadWrite.Linear)
         {
-            graphicsFormat = UnityEngine.Experimental.Rendering.GraphicsFormat.R16_UNorm,
+            graphicsFormat = UnityEngine.Experimental.Rendering.GraphicsFormat.R32_SFloat,
             depthStencilFormat = UnityEngine.Experimental.Rendering.GraphicsFormat.None,
             enableRandomWrite = true
         };
