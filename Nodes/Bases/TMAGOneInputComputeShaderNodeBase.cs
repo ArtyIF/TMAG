@@ -18,7 +18,8 @@ public class TMAGOneInputComputeShaderNodeBase : TMAGComputeShaderNodeBase
     protected override void SetShaderVariables()
     {
         base.SetShaderVariables();
-        if (AllTexturesAreNotNull()) {
+        if (AllTexturesAreNotNull())
+        {
             ComputeShaderInstance.SetTexture(KernelIndex, "Input", GetInputValue<RenderTexture>("input"));
         }
     }

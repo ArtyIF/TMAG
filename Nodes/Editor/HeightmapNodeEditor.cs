@@ -14,18 +14,30 @@ public class HeightmapNodeEditor : NodeEditor
         {
             Rect rect = GUILayoutUtility.GetAspectRect(1, GUILayout.ExpandWidth(true));
             RenderTexture nodeValue = node.GetValue(node.GetOutputPort("output")) as RenderTexture;
-            if (nodeValue) {
+            if (nodeValue)
+            {
                 EditorGUI.DrawPreviewTexture(rect, nodeValue);
-            } else {
+            }
+            else
+            {
                 GUIStyle errorStyle = new(EditorStyles.label)
                 {
-                    alignment = TextAnchor.MiddleCenter,
+                    alignment = TextAnchor.UpperCenter,
                     fontStyle = FontStyle.Bold,
-                    fontSize = 18
+                    fontSize = 18,
+                    padding = new(8, 8, 8, 8)
+                };
+                GUIStyle errorExplanationStyle = new(EditorStyles.label)
+                {
+                    alignment = TextAnchor.LowerCenter,
+                    fontSize = 10,
+                    wordWrap = true,
+                    padding = new(8, 8, 8, 8)
                 };
 
                 EditorGUI.DrawRect(rect, Color.black);
-                EditorGUI.LabelField(rect, "Missing value!", errorStyle);
+                EditorGUI.LabelField(rect, "No output!", errorStyle);
+                EditorGUI.LabelField(rect, "Check that you connected all the input ports and filled all the fields on this or connected nodes. If that doesn't help, check the Console panel for an error.", errorExplanationStyle);
             }
             if (GUILayout.Button("Hide Preview", GUILayout.ExpandWidth(true)))
             {

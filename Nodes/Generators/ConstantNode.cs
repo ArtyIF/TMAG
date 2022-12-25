@@ -11,7 +11,8 @@ public class ConstantNode : TMAGComputeShaderNodeBase
         ComputeShaderInstance.SetFloat("Value", value);
     }
 
-    protected new void Reset() {
+    protected new void Reset()
+    {
         base.Reset();
         hidePreview = true;
     }

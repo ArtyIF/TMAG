@@ -12,6 +12,8 @@
 - Math operators now can output values bigger than 1
 - Removed deferred heightmap updating due to lack of necessity
 - **BREAKING CHANGE**: Added compute shader instancing to fix issues with nodes of the same type not working correctly when placed on the same graph. In custom nodes, replace `ComputeShader` with `ComputeShaderInstance` and reassign the Compute Shader field (in .meta file, replace `ComputeShader` with `computeShader`)
+- Updated formatting
+- Added some extra explanations to `null` node errors
 
 ## v0.4.0
 - Wrote some compute shader replacements for regular shaders

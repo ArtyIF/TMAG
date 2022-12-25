@@ -23,7 +23,8 @@ public class TMAGGraph : NodeGraph
     public int terrainResolution = 513;
     #endregion
 
-    public HeightmapNode GetHeightmapNode() {
+    public HeightmapNode GetHeightmapNode()
+    {
         foreach (Node node in nodes)
         {
             if (node is HeightmapNode heightmapNode)

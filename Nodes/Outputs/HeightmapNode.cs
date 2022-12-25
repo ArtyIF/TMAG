@@ -11,7 +11,7 @@ public class HeightmapNode : TMAGNodeBase
     )]
     public RenderTexture input;
     [HideInInspector] public bool hidePreview = false;
-    
+
     public override object GetValue(NodePort port)
     {
         return GetInputValue<RenderTexture>("input");

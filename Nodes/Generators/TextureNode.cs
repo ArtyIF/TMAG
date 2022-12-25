@@ -15,7 +15,8 @@ public class TextureNode : TMAGComputeShaderNodeBase
     protected override void SetShaderVariables()
     {
         base.SetShaderVariables();
-        if (value) {
+        if (value)
+        {
             ComputeShaderInstance.SetTexture(KernelIndex, "Value", value);
             ComputeShaderInstance.SetFloat("ValueResolution", Mathf.Min(value.width, value.height));
         }
