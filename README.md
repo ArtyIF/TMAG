@@ -4,7 +4,7 @@
 ## Description
 TMAG is a node-based tool to generate terrains and modify pre-created ones. It's currently at a very early stage, but it's pretty usable with several caveats.
 
-Most built-in nodes are powered by shaders (Shader Graphs and coded shaders) rendering to Custom Render Textures, making terrain generation quite a bit faster than other free alternatives like [MapMagic 2](https://assetstore.unity.com/packages/tools/terrain/mapmagic-2-165180). The node-based architecture also makes it much more flexible and customizable than a lot of other free terrain generators, which usually rely on Perlin noise only.
+Most built-in nodes are powered by compute shaders rendering to Render Textures, making terrain generation a lot faster compared to other free alternatives like [MapMagic 2](https://assetstore.unity.com/packages/tools/terrain/mapmagic-2-165180). The node-based architecture also makes it much more flexible and customizable than a lot of other free terrain generators, which usually rely on Perlin noise only.
 
 ## Dependencies
 - From Unity registry (should get installed automatically):
