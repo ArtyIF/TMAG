@@ -23,6 +23,12 @@ public class TMAGComputeShaderNodeBase : TMAGNodeBase
 
     protected override void Init()
     {
+        if (!SystemInfo.supportsComputeShaders) {
+            throw new PlatformNotSupportedException("TMAG requires compute shader support, which this platform doesn't have");
+        }
+        if (!SystemInfo.SupportsRandomWriteOnRenderTextureFormat(RenderTextureFormat.R16)) {
+            throw new PlatformNotSupportedException("TMAG requires random write on R16 render texture format support, which this platform doesn't have");
+        }
         base.Init();
         if ((graph as TMAGGraph).terrainResolution < 1)
         {

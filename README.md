@@ -35,7 +35,7 @@ To install packages from OpenUPM, you can either use [openupm-cli](https://openu
 - [x] Tool to convert RAW heightmap exports to regular Textures
 - [x] Basic math operators (Add, Subtract, Multiply, Divide)
 - [ ] More math operators
-- [x] Slope and Steepness operators
+- [x] Steepness operatos
 - [ ] More terrain-specific operators
 - [x] Heightmap output
 - [ ] Splatmap output
@@ -44,7 +44,7 @@ To install packages from OpenUPM, you can either use [openupm-cli](https://openu
 - [ ] Export terrains to asset
 - [ ] Infinite terrain?
 - [ ] Phase out Tri Inspector? Having to install the Installer as well is cumbersome, and I don't see any benefit with this
-- [ ] Move to compute shaders? Should solve some issues with Render Textures
+- [x] Move to compute shaders
 - [ ] Move to shader generation? Should solve potential OoB issues
 - [ ] Come up with more features
 
