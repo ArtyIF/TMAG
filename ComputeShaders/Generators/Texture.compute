@@ -1,0 +1,11 @@
+#pragma kernel TextureNodeMain
+
+Texture2D<float> Input;
+
+RWTexture2D<float> Result;
+
+[numthreads(8,8,1)]
+void TextureNodeMain(uint3 id : SV_DispatchThreadID)
+{
+    Result[id.xy] = Input[id.xy];
+}

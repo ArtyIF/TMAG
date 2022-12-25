@@ -1,0 +1,11 @@
+#pragma kernel ConstantNodeMain
+
+float Input;
+
+RWTexture2D<float> Result;
+
+[numthreads(8,8,1)]
+void ConstantNodeMain(uint3 id : SV_DispatchThreadID)
+{
+    Result[id.xy] = Input;
+}
