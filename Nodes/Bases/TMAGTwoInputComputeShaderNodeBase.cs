@@ -26,8 +26,8 @@ public class TMAGTwoInputComputeShaderNodeBase : TMAGComputeShaderNodeBase
     {
         base.SetShaderVariables();
         if (AllTexturesAreNotNull()) {
-            ComputeShader.SetTexture(KernelIndex, "InputA", GetInputValue<RenderTexture>("a"));
-            ComputeShader.SetTexture(KernelIndex, "InputB", GetInputValue<RenderTexture>("b"));
+            ComputeShaderInstance.SetTexture(KernelIndex, "InputA", GetInputValue<RenderTexture>("a"));
+            ComputeShaderInstance.SetTexture(KernelIndex, "InputB", GetInputValue<RenderTexture>("b"));
         }
     }
 }

@@ -19,7 +19,7 @@ public class TMAGOneInputComputeShaderNodeBase : TMAGComputeShaderNodeBase
     {
         base.SetShaderVariables();
         if (AllTexturesAreNotNull()) {
-            ComputeShader.SetTexture(KernelIndex, "Input", GetInputValue<RenderTexture>("input"));
+            ComputeShaderInstance.SetTexture(KernelIndex, "Input", GetInputValue<RenderTexture>("input"));
         }
     }
 }

@@ -7,15 +7,16 @@ public class TMAGComputeShaderNodeBase : TMAGNodeBase
     [Output(typeConstraint = TypeConstraint.Strict)] public RenderTexture output;
 
     [HideInInspector] public bool hidePreview = false;
-    [HideInInspector] public ComputeShader ComputeShader;
+    [HideInInspector] public ComputeShader computeShader;
+    protected ComputeShader ComputeShaderInstance { get; set; }
     protected virtual string KernelName { get; }
     protected int KernelIndex
     {
         get
         {
-            if (ComputeShader != null)
+            if (ComputeShaderInstance != null)
             {
-                return ComputeShader.FindKernel(KernelName);
+                return ComputeShaderInstance.FindKernel(KernelName);
             }
             return -1;
         }
@@ -23,13 +24,21 @@ public class TMAGComputeShaderNodeBase : TMAGNodeBase
 
     protected override void Init()
     {
-        if (!SystemInfo.supportsComputeShaders) {
+        if (!SystemInfo.supportsComputeShaders)
+        {
             throw new PlatformNotSupportedException("TMAG requires compute shader support, which this platform doesn't have");
         }
-        if (!SystemInfo.SupportsRandomWriteOnRenderTextureFormat(RenderTextureFormat.RFloat)) {
+        if (!SystemInfo.SupportsRandomWriteOnRenderTextureFormat(RenderTextureFormat.RFloat))
+        {
             throw new PlatformNotSupportedException("TMAG requires random write on RFloat render texture format support, which this platform doesn't have");
         }
+
         base.Init();
+        if (!ComputeShaderInstance)
+        {
+            ComputeShaderInstance = Instantiate(computeShader);
+        }
+
         if ((graph as TMAGGraph).terrainResolution < 1)
         {
             throw new InvalidOperationException("Terrain resolution is negative or 0!");
@@ -45,9 +54,9 @@ public class TMAGComputeShaderNodeBase : TMAGNodeBase
 
     protected virtual void SetShaderVariables()
     {
-        ComputeShader.SetTexture(KernelIndex, "Output", output);
-        ComputeShader.SetFloat("Resolution", (graph as TMAGGraph).terrainResolution);
-        ComputeShader.SetFloat("TexelSize", 1.0f / (graph as TMAGGraph).terrainResolution);
+        ComputeShaderInstance.SetTexture(KernelIndex, "Output", output);
+        ComputeShaderInstance.SetFloat("Resolution", (graph as TMAGGraph).terrainResolution);
+        ComputeShaderInstance.SetFloat("TexelSize", 1.0f / (graph as TMAGGraph).terrainResolution);
     }
 
     protected virtual bool AllTexturesAreNotNull()
@@ -73,7 +82,7 @@ public class TMAGComputeShaderNodeBase : TMAGNodeBase
             int threadGroups = Mathf.CeilToInt((graph as TMAGGraph).terrainResolution / 8.0f);
             if (AllTexturesAreNotNull())
             {
-                ComputeShader.Dispatch(KernelIndex, threadGroups, threadGroups, 1);
+                ComputeShaderInstance.Dispatch(KernelIndex, threadGroups, threadGroups, 1);
                 return output;
             }
         }

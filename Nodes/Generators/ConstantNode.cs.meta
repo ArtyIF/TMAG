@@ -6,7 +6,7 @@ MonoImporter:
   defaultReferences:
   - graph: {instanceID: 0}
   - output: {instanceID: 0}
-  - ComputeShader: {fileID: 7200000, guid: 0779f68a44759a17d9ae59a04858f88c, type: 3}
+  - computeShader: {fileID: 7200000, guid: 0779f68a44759a17d9ae59a04858f88c, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

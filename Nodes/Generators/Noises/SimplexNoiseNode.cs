@@ -8,6 +8,6 @@ public class SimplexNoiseNode : TMAGComputeShaderNodeBase
     protected override void SetShaderVariables()
     {
         base.SetShaderVariables();
-        ComputeShader.SetFloat("Scale", scale);
+        ComputeShaderInstance.SetFloat("Scale", scale);
     }
 }

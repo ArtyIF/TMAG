@@ -8,7 +8,7 @@ public class ConstantNode : TMAGComputeShaderNodeBase
     protected override void SetShaderVariables()
     {
         base.SetShaderVariables();
-        ComputeShader.SetFloat("Value", value);
+        ComputeShaderInstance.SetFloat("Value", value);
     }
 
     protected new void Reset() {
