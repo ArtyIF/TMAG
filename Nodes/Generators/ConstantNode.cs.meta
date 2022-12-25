@@ -1,14 +1,12 @@
 fileFormatVersion: 2
-guid: 76ebb39b85795cda49abf61ead77c8da
+guid: 6df8bf03e5207d6d08e17ecec5998743
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
   - graph: {instanceID: 0}
   - output: {instanceID: 0}
-  - ComputeShader: {fileID: 7200000, guid: a7aea09cf5c7aee7d9ceb16468f1e5a4, type: 3}
-  - a: {instanceID: 0}
-  - b: {instanceID: 0}
+  - ComputeShader: {fileID: 7200000, guid: 0779f68a44759a17d9ae59a04858f88c, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -1,6 +1,6 @@
 [CreateNodeMenu("TMAG/Operators/Math/Multiply")]
-public class MultiplyNode : TMAGTwoInputShaderNodeBase
+public class MultiplyNode : TMAGTwoInputComputeShaderNodeBase
 {
-    protected override string ShaderPath { get; } = "Hidden/TMAG/MultiplyNode";
+    protected override string KernelName { get; } = "MultiplyNodeMain";
     protected override string NodeName { get; } = "Multiply";
 }

@@ -3,7 +3,11 @@ guid: ee6e0dd112174d73faf6ab922e389fdb
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - graph: {instanceID: 0}
+  - output: {instanceID: 0}
+  - ComputeShader: {fileID: 7200000, guid: b5081166556f765a0b69a224b2e139a2, type: 3}
+  - value: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

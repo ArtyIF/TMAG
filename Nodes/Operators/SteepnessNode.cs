@@ -1,6 +1,6 @@
 [CreateNodeMenu("TMAG/Operators/Steepness")]
-public class SteepnessNode : TMAGOneInputShaderNodeBase
+public class SteepnessNode : TMAGOneInputComputeShaderNodeBase
 {
-    protected override string ShaderPath { get; } = "Hidden/TMAG/SteepnessNode";
+    protected override string KernelName { get; } = "SteepnessNodeMain";
     protected override string NodeName { get; } = "Steepness";
 }

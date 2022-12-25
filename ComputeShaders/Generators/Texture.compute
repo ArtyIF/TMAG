@@ -1,11 +1,14 @@
 #pragma kernel TextureNodeMain
 
-Texture2D<float> Input;
+Texture2D<float> Value;
+float ValueResolution;
+float Resolution;
 
-RWTexture2D<float> Result;
+RWTexture2D<float> Output;
 
 [numthreads(8,8,1)]
 void TextureNodeMain(uint3 id : SV_DispatchThreadID)
 {
-    Result[id.xy] = Input[id.xy];
+    uint2 correctedID = id.xy * (ValueResolution / Resolution);
+    Output[id.xy] = Value[correctedID.xy];
 }

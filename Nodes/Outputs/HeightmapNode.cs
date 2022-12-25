@@ -9,11 +9,11 @@ public class HeightmapNode : TMAGNodeBase
         typeConstraint = TypeConstraint.Strict,
         backingValue = ShowBackingValue.Never
     )]
-    public CustomRenderTexture input;
+    public RenderTexture input;
     [HideInInspector] public bool hidePreview = false;
     
     public override object GetValue(NodePort port)
     {
-        return GetInputValue<CustomRenderTexture>("input");
+        return GetInputValue<RenderTexture>("input");
     }
 }

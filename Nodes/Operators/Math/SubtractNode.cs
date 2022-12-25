@@ -1,6 +1,6 @@
 [CreateNodeMenu("TMAG/Operators/Math/Subtract")]
-public class SubtractNode : TMAGTwoInputShaderNodeBase
+public class SubtractNode : TMAGTwoInputComputeShaderNodeBase
 {
-    protected override string ShaderPath { get; } = "Hidden/TMAG/SubtractNode";
+    protected override string KernelName { get; } = "SubtractNodeMain";
     protected override string NodeName { get; } = "Subtract";
 }

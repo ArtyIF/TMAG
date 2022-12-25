@@ -41,7 +41,7 @@ public class TMAGTerrainGrid : MonoBehaviour
     public int terrainResolution = 513;
     #endregion
 
-    private CustomRenderTexture heightmapRTToApply = null;
+    private RenderTexture heightmapRTToApply = null;
 
     #region Buttons
     [Button]
@@ -50,7 +50,7 @@ public class TMAGTerrainGrid : MonoBehaviour
     {
         graph.terrainResolution = terrainResolution;
         graph.tileSize = tileSize;
-        heightmapRTToApply = (CustomRenderTexture)graph.GetHeightmapNode().GetValue(null);
+        heightmapRTToApply = (RenderTexture)graph.GetHeightmapNode().GetValue(null);
 #if UNITY_EDITOR
         if (!Application.isPlaying)
         {

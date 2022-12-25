@@ -11,7 +11,7 @@ public class TMAGGraphEditor : NodeGraphEditor
         return new NodeEditorPreferences.Settings()
         {
             typeColors = new Dictionary<string, Color>() {
-                { typeof(CustomRenderTexture).PrettyName(), new Color(255 / 255.0f, 192 / 255.0f, 64 / 255.0f) }
+                { typeof(RenderTexture).PrettyName(), new Color(255 / 255.0f, 192 / 255.0f, 64 / 255.0f) }
             },
             noodlePath = NoodlePath.ShaderLab
         };

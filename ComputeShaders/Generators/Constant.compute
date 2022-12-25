@@ -1,11 +1,11 @@
 #pragma kernel ConstantNodeMain
 
-float Input;
+float Value;
 
-RWTexture2D<float> Result;
+RWTexture2D<float> Output;
 
 [numthreads(8,8,1)]
 void ConstantNodeMain(uint3 id : SV_DispatchThreadID)
 {
-    Result[id.xy] = Input;
+    Output[id.xy] = Value;
 }

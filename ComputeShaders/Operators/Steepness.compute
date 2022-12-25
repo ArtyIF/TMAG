@@ -1,12 +1,12 @@
-#pragma kernel SlopeNodeMain
+#pragma kernel SteepnessNodeMain
 
 uint Resolution;
 Texture2D<float> Input;
 
-RWTexture2D<float> Result;
+RWTexture2D<float> Output;
 
 [numthreads(8,8,1)]
-void SlopeNodeMain(uint3 id : SV_DispatchThreadID)
+void SteepnessNodeMain(uint3 id : SV_DispatchThreadID)
 {
     uint2 limitedID = id.xy;
     limitedID.x = min(limitedID.x, Resolution - 2);
@@ -16,5 +16,5 @@ void SlopeNodeMain(uint3 id : SV_DispatchThreadID)
     float dx = Input[limitedID + uint2(1, 0)] - height;
     float dy = Input[limitedID + uint2(0, 1)] - height;
 
-    Result[id.xy] = sqrt(dx * dx + dy * dy);
+    Output[id.xy] = sqrt(dx * dx + dy * dy);
 }

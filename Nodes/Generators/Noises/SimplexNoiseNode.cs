@@ -1,12 +1,13 @@
 [CreateNodeMenu("TMAG/Generators/Noise/Simplex")]
-public class SimplexNoiseNode : TMAGShaderNodeBase
+public class SimplexNoiseNode : TMAGComputeShaderNodeBase
 {
     public float scale = 10.0f;
-    protected override string ShaderPath { get; } = "Hidden/TMAG/SimplexNoiseNode";
+    protected override string KernelName { get; } = "SimplexNoiseNodeMain";
     protected override string NodeName { get; } = "Simplex Noise";
 
     protected override void SetShaderVariables()
     {
-        ShaderMaterial.SetFloat("_Scale", GetInputValue("scale", scale));
+        base.SetShaderVariables();
+        ComputeShader.SetFloat("Scale", scale);
     }
 }

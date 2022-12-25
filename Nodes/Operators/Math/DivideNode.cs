@@ -1,6 +1,6 @@
 [CreateNodeMenu("TMAG/Operators/Math/Divide")]
-public class DivideNode : TMAGTwoInputShaderNodeBase
+public class DivideNode : TMAGTwoInputComputeShaderNodeBase
 {
-    protected override string ShaderPath { get; } = "Hidden/TMAG/DivideNode";
+    protected override string KernelName { get; } = "DivideNodeMain";
     protected override string NodeName { get; } = "Divide";
 }

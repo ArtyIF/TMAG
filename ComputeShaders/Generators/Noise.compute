@@ -7,18 +7,18 @@
 float Scale;
 float TexelSize;
 
-RWTexture2D<float> Result;
+RWTexture2D<float> Output;
 
 [numthreads(8,8,1)]
 void PerlinNoiseNodeMain(uint3 id : SV_DispatchThreadID)
 {
-    float2 uv = (float2)(id.xy) * TexelSize * Scale;
-    Result[id.xy] = (ClassicNoise(uv) + 1.0) * 0.5;
+    float2 uv = float2(id.xy) * TexelSize * Scale;
+    Output[id.xy] = (ClassicNoise(uv) + 1.0) * 0.5;
 }
 
 [numthreads(8,8,1)]
 void SimplexNoiseNodeMain(uint3 id : SV_DispatchThreadID)
 {
-    float2 uv = (float2)(id.xy) * TexelSize * Scale;
-    Result[id.xy] = (SimplexNoise(uv) + 1.0) * 0.5;
+    float2 uv = float2(id.xy) * TexelSize * Scale;
+    Output[id.xy] = (SimplexNoise(uv) + 1.0) * 0.5;
 }

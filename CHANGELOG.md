@@ -6,7 +6,9 @@
 - When the new version is ready, rename the header to the version number. After that, create the according tag. Also make sure to change the package.json version as well.
 
 ## Upcoming Release (v0.4.0):
-- Wrote some compute shader replacements for regular shaders, currently unused
+- Wrote some compute shader replacements for regular shaders
+- **BREAKING CHANGE**: Moved to compute shaders! They work pretty well for the most part. When creating your own, make sure to assign the compute shader in the MonoBehaviour asset inspector window
+- **BREAKING CHANGE**: The Value Noise and Slope nodes are gone. Value Noise probably forever, Slope only temporarily
 
 ## v0.3.0
 - Some updates to README and changelog
