@@ -24,10 +24,10 @@
 - Some updates to README and changelog
 - Fixed RAW to texture tool's settings not working
 - Removed grid size parameter for now
-- **BREAKING CHANGE** (reverted): `hidePreview` is now a parameter to allow overriding the default value
+- ~~**BREAKING CHANGE** (reverted): `hidePreview` is now a parameter to allow overriding the default value~~
 - Constant node now hides preview by default
 - ConstantFloatNode.cs moved to ConstantNode.cs. This one is probably not a breaking change since the class name and the .meta file are the same
-- Undone the `hidePreview` change due to errors it caused (while still keeping the new constant node preview behavior)
+- Undone the `hidePreview` change due to errors it caused while still keeping the new constant node preview behavior, this time without breaking compatibility
 - **BREAKING CHANGE**: Changed the order of assigning heights to be more correct
 
 ## v0.2.3
