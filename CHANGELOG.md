@@ -10,6 +10,7 @@
 - Added check that compute shaders and random write textures are actually supported
 - Switched to RFloat texture format, which allows Constant Node values to finally be more than 1
 - Math operators now can output values bigger than 1
+- Removed deferred heightmap updating due to lack of necessity
 
 ## v0.4.0
 - Wrote some compute shader replacements for regular shaders
