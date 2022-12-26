@@ -8,6 +8,7 @@
 ## Upcoming Release
 - Renamed Generator group in `TMAGTerrainGrid` to Graph
 - Removed unused `UnityEditor` import
+- Added a Slope node, although the degrees don't seem to work the expected way. Looks like the next update is going be another breaking one...
 
 ## v0.5.0
 - Texture Node now uses the smallest of dimensions instead of width for calculating input resolution. This isn't considered breaking as this node is meant to be used with heightmaps or splatmaps, i.e. textures that are usually square

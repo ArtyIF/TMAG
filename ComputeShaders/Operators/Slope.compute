@@ -1,0 +1,25 @@
+#pragma kernel SlopeNodeMain
+
+uint Resolution;
+Texture2D<float> Input;
+float4 BlendVector;
+
+RWTexture2D<float> Output;
+
+[numthreads(8,8,1)]
+void SlopeNodeMain(uint3 id : SV_DispatchThreadID)
+{
+    uint2 limitedID = id.xy;
+    limitedID.x = min(limitedID.x, Resolution - 2);
+    limitedID.y = min(limitedID.y, Resolution - 2);
+
+    float height = Input[limitedID];
+    float dx = Input[limitedID + uint2(1, 0)] - height;
+    float dy = Input[limitedID + uint2(0, 1)] - height;
+    float steepness = sqrt(dx * dx + dy * dy);
+
+    float minBlend = smoothstep(BlendVector.x, BlendVector.y, steepness);
+    float maxBlend = smoothstep(BlendVector.w, BlendVector.z, steepness);
+
+    Output[id.xy] = minBlend * maxBlend;
+}
