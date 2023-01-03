@@ -2,6 +2,8 @@
 #pragma kernel SubtractNodeMain
 #pragma kernel MultiplyNodeMain
 #pragma kernel DivideNodeMain
+#pragma kernel MinimumNodeMain
+#pragma kernel MaximumNodeMain
 
 Texture2D<float> InputA;
 Texture2D<float> InputB;
@@ -30,4 +32,18 @@ void MultiplyNodeMain(uint3 id : SV_DispatchThreadID)
 void DivideNodeMain(uint3 id : SV_DispatchThreadID)
 {
     Output[id.xy] = max(InputA[id.xy] / InputB[id.xy], 0.0f);
+}
+
+
+[numthreads(8,8,1)]
+void MinimumNodeMain(uint3 id : SV_DispatchThreadID)
+{
+    Output[id.xy] = max(min(InputA[id.xy], InputB[id.xy]), 0.0f);
+}
+
+
+[numthreads(8,8,1)]
+void MaximumNodeMain(uint3 id : SV_DispatchThreadID)
+{
+    Output[id.xy] = max(max(InputA[id.xy], InputB[id.xy]), 0.0f);
 }
