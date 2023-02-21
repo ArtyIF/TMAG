@@ -1,4 +1,4 @@
-# TMAG
+# TMAG (currently abandoned!)
 *Terrain Modifier And Generator*
 
 ## Description
