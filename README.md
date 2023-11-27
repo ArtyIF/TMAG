@@ -1,5 +1,7 @@
-# TMAG (currently abandoned!)
+# TMAG (abandoned!)
 *Terrain Modifier And Generator*
+
+As I moved away from Unity, I'll no longer work on this project.
 
 ## Description
 TMAG is a node-based tool to generate terrains and modify pre-created ones. It's currently at a very early stage, but it's pretty usable with several caveats.
